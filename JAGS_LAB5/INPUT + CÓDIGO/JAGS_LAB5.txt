@@ -1,0 +1,47 @@
+####################
+#                  #
+# Copiar todo esto #
+#                  #
+####################
+# Hecho con gusto por Juan Antonio González Sierra (DCEA - UAEH)
+
+# Laboratorio - PIVOTAR A LO LARGO
+
+
+#############################################
+#LABORATORIO: Tidy data (datos ordenados) 1 #
+#############################################
+#Prerrequisitos
+
+#instalar paquete tidyverse  y readr
+install.packages("tidyverse") Despues de muchos problemas, pude instalarlo.
+install.packages("readr")
+
+
+#Cargar paquete tidyverse y readr
+library(tidyverse)
+library(readr)
+
+#CARGAR DATOS
+
+library(readr)
+ICE_2014 <- read_csv("C:/Users/52551/Desktop/Lab 5/ICE 2014.csv")
+View(ICE_2014)
+
+De acuerdo al vÍdeo pude importar la matriz iterativa de pares de otra forma, copiando el código y considerar a esta nueva matriz como tabla1
+tabla1 <- read_csv("C:/Users/52551/Desktop/Lab 5/ICE 2014.csv")
+View(tabla1)
+
+names(tabla1)
+
+# 1. Pivotar tabla  "A LO LARGO"
+t1_PIVOTANTE = tabla1 %>%
+  pivot_longer(cols = c("Km, 0"   ,   "Km,2"   ,   "Km,4"   ,   "Km,6"   ,   "Km,8"    ,  "Km,10"  ,   "Km,12"  ,   "Km,14"  ,   "Km,16"  ,   "Km,18"   ,  "Km,20"  ,   "Km,22" , "Km,24"  ,   "Km,26" ), names_to = "iteracion", values_to = "ranking")
+
+# Exportar resultado: tabla ordenada
+write.csv(t1_PIVOTANTE, file = "ice_CHARTICULATOR_JAGS_LAB5.csv")
+
+
+getwd()
+"C:/Users/52551/Documents"
+
