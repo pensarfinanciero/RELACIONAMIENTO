@@ -77,4 +77,4 @@ plot(g1)
 write.csv(r, file="relatedness.csv")
 
 #exportar resultados de co ocurrencias
-write.csv(r, file="cocurrences.csv")
+write.csv(c, file="cocurrences.csv")
